@@ -1,0 +1,69 @@
+:root {
+    --cap-color: #ff4081;
+    --cap-size: 30px;
+    --background-color: #f0f8ff;
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+    --modal-bg: #fff;
+    --modal-color: #333;
+}
+
+body {
+    margin: 0;
+    background: var(--background-color);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#cap-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bottle-cap {
+    position: absolute;
+    width: var(--cap-size);
+    height: var(--cap-size);
+    background: var(--cap-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    animation: drop 2s forwards;
+}
+
+@keyframes drop {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    100% { transform: translateY(calc(100vh - var(--cap-size))); opacity: 1; }
+}
+
+#goal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--overlay-bg);
+    color: var(--modal-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    background: var(--modal-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
