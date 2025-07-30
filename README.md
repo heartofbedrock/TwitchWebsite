@@ -29,6 +29,11 @@ This project provides a simple web overlay that listens for Twitch Bits events a
      python app.py
      ```
    - Open the served URL in your browser or use it as an OBS Browser Source.
+   - Serve the files with any static server. For example:
+     ```bash
+     npx http-server .
+     ```
+   - Open the served `index.html` in your browser or use the URL as an OBS Browser Source.
 
 5. **Resetting**
    - Click the **Reset** button after reaching the goal to clear the overlay and begin counting again.
