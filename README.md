@@ -47,3 +47,10 @@ This project provides a simple web overlay that listens for Twitch Bits events a
 
 - This overlay connects directly to Twitch PubSub from the browser. Ensure your OAuth token is kept secret.
 - The overlay is responsive and should work in OBS Browser Source or any modern browser.
+
+## Deploying to Railway
+
+1. Create a new project on [Railway](https://railway.app) and link this repository.
+2. Railway installs Python dependencies from `requirements.txt` automatically.
+3. Set the start command to `gunicorn app:app` (Railway provides the `PORT` environment variable used by `app.py`).
+4. Deploy the project and use the provided Railway domain as your overlay URL.
