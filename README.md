@@ -18,11 +18,17 @@ This project provides a simple web overlay that listens for Twitch Bits events a
    - Open `main.js` and replace the placeholders `YOUR_CLIENT_ID`, `YOUR_OAUTH_TOKEN`, and `YOUR_CHANNEL_ID` with the values from above.
 
 4. **Run Locally**
-   - Serve the files with any static server. For example:
+   - You can serve the overlay either with a static server or with the provided Flask app.
+   - **Option A: Simple static server**
      ```bash
      npx http-server .
      ```
-   - Open the served `index.html` in your browser or use the URL as an OBS Browser Source.
+   - **Option B: Flask**
+     ```bash
+     pip install flask
+     python app.py
+     ```
+   - Open the served URL in your browser or use it as an OBS Browser Source.
 
 5. **Resetting**
    - Click the **Reset** button after reaching the goal to clear the overlay and begin counting again.
