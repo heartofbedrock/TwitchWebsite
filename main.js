@@ -12,6 +12,7 @@ let reconnectTimer = null;
 const capContainer = document.getElementById('cap-container');
 const overlay = document.getElementById('goal-overlay');
 const resetBtn = document.getElementById('reset-btn');
+const bitCounter = document.getElementById('bit-counter');
 
 // Initialize WebSocket connection to Twitch PubSub
 function connect() {
@@ -83,6 +84,7 @@ function handleMessage(data) {
 function addBits(bits) {
     if (!bits) return;
     bitsTotal += bits;
+    bitCounter.textContent = `${bitsTotal} / ${GOAL_BITS} bits`;
     for (let i = 0; i < bits; i++) {
         dropCap();
     }
@@ -114,6 +116,8 @@ resetBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     bitsTotal = 0;
     capContainer.innerHTML = '';
+    bitCounter.textContent = `0 / ${GOAL_BITS} bits`;
 });
 
+bitCounter.textContent = `0 / ${GOAL_BITS} bits`;
 connect();
