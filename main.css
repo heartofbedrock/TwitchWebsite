@@ -50,6 +50,10 @@ body {
     flex-direction: column;
     z-index: 10;
 }
+/* Hide overlay when it has the .hidden class */
+#goal-overlay.hidden {
+    display: none;
+}
 
 .hidden {
     display: none;
